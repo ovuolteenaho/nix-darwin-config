@@ -19,6 +19,7 @@
         systemPackages = [ 
           pkgs.android-tools
           pkgs.bat
+          pkgs.cmake
           pkgs.coreutils
           pkgs.curl
           pkgs.direnv
@@ -26,6 +27,7 @@
           pkgs.git-lfs
           pkgs.lsd
           pkgs.neovim
+          pkgs.ninja
           pkgs.openfortivpn
           pkgs.openjdk17
           pkgs.python3
@@ -39,8 +41,6 @@
           JAVA_HOME = "${pkgs.openjdk17.home}";
           ANDROID_SDK_ROOT = "/Users/ollivuolteenaho/Library/Android/sdk";
           ANDROID_NDK_ROOT = "/Users/ollivuolteenaho/Library/Android/sdk/ndk/25.1.8937393";
-          CMAKE_ROOT = "/Users/ollivuolteenaho/Qt/Tools/CMake/Cmake.app/Contents/bin";
-          NINJA_ROOT = "/Users/ollivuolteenaho/Qt/Tools/Ninja";
         };
       };
 
@@ -66,8 +66,6 @@
         JAVA_HOME = "${pkgs.openjdk17.home}";
         ANDROID_SDK_ROOT = "/Users/ollivuolteenaho/Library/Android/sdk";
         ANDROID_NDK_ROOT = "/Users/ollivuolteenaho/Library/Android/sdk/ndk/25.1.8937393";
-        CMAKE_ROOT = "/Users/ollivuolteenaho/Qt/Tools/CMake/Cmake.app/Contents/bin";
-        NINJA_ROOT = "/Users/ollivuolteenaho/Qt/Tools/Ninja";
       };
 
       programs.fish = {
