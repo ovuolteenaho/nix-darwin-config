@@ -19,7 +19,6 @@
         systemPackages = [ 
           pkgs.android-tools
           pkgs.bat
-          pkgs.cmake
           pkgs.coreutils
           pkgs.curl
           pkgs.direnv
@@ -37,6 +36,7 @@
           pkgs.vim
           pkgs.wget
         ];
+        systemPath = ["/opt/homebrew/bin"];
         variables = {
           JAVA_HOME = "${pkgs.openjdk17.home}";
           ANDROID_SDK_ROOT = "/Users/ollivuolteenaho/Library/Android/sdk/cmdline-tools/latest/bin";
@@ -46,6 +46,7 @@
 
       homebrew = {
         enable = true;
+        brews = ["cmake"];
         casks = [
           "android-studio"
           "firefox"
