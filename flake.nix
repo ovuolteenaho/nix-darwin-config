@@ -24,6 +24,7 @@
           pkgs.direnv
           pkgs.git
           pkgs.git-lfs
+          pkgs.htop
           pkgs.lsd
           pkgs.neovim
           pkgs.ninja
