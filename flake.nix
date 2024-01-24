@@ -58,6 +58,7 @@
           "microsoft-outlook"
           "microsoft-teams"
           "orion"
+          "signal"
         ];
         global.autoUpdate = false;
         onActivation = {
