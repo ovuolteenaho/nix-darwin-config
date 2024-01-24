@@ -124,11 +124,11 @@
   {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#QT-L-K0HG663WJR
-    darwinConfigurations."QT-L-K0HG663WJR-2" = nix-darwin.lib.darwinSystem {
+    darwinConfigurations."QT-L-K0HG663WJR" = nix-darwin.lib.darwinSystem {
       modules = [ configuration ];
     };
 
     # Expose the package set, including overlays, for convenience.
-    darwinPackages = self.darwinConfigurations."QT-L-K0HG663WJR-2".pkgs;
+    darwinPackages = self.darwinConfigurations."QT-L-K0HG663WJR".pkgs;
   };
 }
