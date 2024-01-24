@@ -43,7 +43,7 @@
         systemPath = ["/opt/homebrew/bin"];
         variables = {
           JAVA_HOME = "${pkgs.openjdk17.home}";
-          ANDROID_SDK_ROOT = "/Users/ollivuolteenaho/Library/Android/sdk/cmdline-tools/latest/bin";
+          ANDROID_SDK_ROOT = "/Users/ollivuolteenaho/Library/Android/sdk";
           ANDROID_NDK_ROOT = "/Users/ollivuolteenaho/Library/Android/sdk/ndk/26.1.10909125";
         };
       };
@@ -69,7 +69,7 @@
 
       launchd.user.envVariables = {
         JAVA_HOME = "${pkgs.openjdk17.home}";
-        ANDROID_SDK_ROOT = "/Users/ollivuolteenaho/Library/Android/sdk/cmdline-tools/latest/bin";
+        ANDROID_SDK_ROOT = "/Users/ollivuolteenaho/Library/Android/sdk";
         ANDROID_NDK_ROOT = "/Users/ollivuolteenaho/Library/Android/sdk/ndk/26.1.10909125";
       };
 
