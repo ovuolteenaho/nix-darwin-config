@@ -9,6 +9,9 @@
 
   outputs = inputs@{ self, nix-darwin, nixpkgs }:
   let
+    python-install = ps: with ps; [
+      virtualenv
+    ];
     configuration = { pkgs, ... }: {
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
@@ -30,7 +33,7 @@
           pkgs.ninja
           pkgs.openfortivpn
           pkgs.openjdk17
-          pkgs.python3
+          (pkgs.python3.withPackages python-install)
           pkgs.rectangle
           pkgs.ripgrep
           pkgs.timidity
