@@ -10,12 +10,15 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs }:
   let
     python-install = ps: with ps; [
+      packaging
+      pip
       virtualenv
     ];
     configuration = { pkgs, ... }: {
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment = {
+        pathsToLink = ["${pkgs.openjdk17.home}"];
         shells = [
           pkgs.fish
         ];
@@ -27,6 +30,7 @@
           pkgs.direnv
           pkgs.git
           pkgs.git-lfs
+          pkgs.gradle
           pkgs.htop
           pkgs.lsd
           pkgs.neovim
@@ -34,13 +38,15 @@
           pkgs.openfortivpn
           pkgs.openjdk17
           (pkgs.python3.withPackages python-install)
-          pkgs.rectangle
           pkgs.ripgrep
           pkgs.timidity
+          pkgs.tree
           pkgs.vim
           pkgs.wget
         ];
-        systemPath = ["/opt/homebrew/bin"];
+        systemPath = [
+          "/opt/homebrew/bin"
+        ];
         variables = {
           JAVA_HOME = "${pkgs.openjdk17.home}";
           ANDROID_SDK_ROOT = "/Users/ollivuolteenaho/Library/Android/sdk";
@@ -58,7 +64,9 @@
           "microsoft-outlook"
           "microsoft-teams"
           "orion"
+          "rectangle"
           "signal"
+          "vlc"
         ];
         global.autoUpdate = false;
         onActivation = {
